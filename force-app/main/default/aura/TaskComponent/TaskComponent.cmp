@@ -1,0 +1,18 @@
+<aura:component controller="DisplayListSobjectsController" >
+   <aura:attribute name="options" type="List" />
+   <aura:attribute name="selectedValue" type="String" />
+  <!-- <aura:attribute name="objects" type="String[]" />-->
+   
+   <aura:handler name="init" value="{!this}" action="{!c.init}" />
+  
+   <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+            <lightning:select name="Objects" label="Select object:" aura:id="onjId" value="{!v.selectedValue}">
+                <aura:iteration items="{!v.options}" var="objectname">
+                    <option value="{!objectname}" text="{!objectname}" />  
+                  <!--option text="{!object.label}"  selected="{!option.selected}"/>-->
+                </aura:iteration>
+            </lightning:select>
+        </lightning:layoutItem>
+    </lightning:layout>    
+</aura:component>
